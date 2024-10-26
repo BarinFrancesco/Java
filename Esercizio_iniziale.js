@@ -21,13 +21,23 @@ if ( (Anno%4==0 && Anno%100!=0) || Anno%400==0 ) {
 function Età_votatore(){
     
 let Anno_nascita = prompt("Inserisci il tuo anno di nascita e ti diremo se puoi votare per il senato");
-Anno_nascita=parseInt(Anno_nascita);
     
-while (isNaN(Anno_nascita) || Anno_nascita<1900 || Anno_nascita>2024){
-alert("Il tuo anno di nascità non è realistico, inseriscine uno vero!!");
-Anno_nascita = prompt("Inserisci il tuo VERO anno di nascita e ti diremo se puoi votare per il senato");
+while (isNaN(Anno_nascita) || Anno_nascita==""){
+
+    alert("Il tuo anno di nascita deve essere un numero!!");
+    Anno_nascita = prompt("Inserisci il tuo VERO anno di nascita e ti diremo se puoi votare per il senato");
+
+} 
+
 Anno_nascita=parseInt(Anno_nascita);
+
+while (Anno_nascita<1900 || Anno_nascita>2024){
+    
+    alert("Il tuo anno di nascita Non è realistico, mettine uno possibile");
+    Anno_nascita = prompt("Inserisci il tuo VERO anno di nascita e ti diremo se puoi votare per il senato");
+ 
 }
+
     let Età=2024-Anno_nascita;    
 
 if (Età>=25){
