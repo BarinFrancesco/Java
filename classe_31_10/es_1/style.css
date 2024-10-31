@@ -1,0 +1,16 @@
+body{
+ background: rgb(240,240,240);
+
+}
+h1{
+  font-family: sans-serif;
+  color: #ED4302;
+}
+#risposta{
+background-color: rgb(256,256,256);
+box-shadow: 0 3px 7px rgb(233,230,230);
+}
+
+button:hover{
+    background-color: #ED4302;
+}
