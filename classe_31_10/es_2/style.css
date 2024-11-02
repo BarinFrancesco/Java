@@ -1,0 +1,27 @@
+body{
+  text-align:center;
+  background-color: rgb(220,220,220);
+}
+
+h1{
+    color: rgb(0,85,185);
+    font-family: Verdana;
+    font-size: 40px;
+}
+
+#n_mesi{
+    max-width: 50px;
+}
+
+#sesso{
+    max-width: 50px;
+}
+
+#fascia{
+    max-width: 50px;
+}
+
+#scheda_dati{
+    text-align: left;
+    width: 525px;
+}
