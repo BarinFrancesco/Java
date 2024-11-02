@@ -1,16 +1,26 @@
 body{
  background: rgb(240,240,240);
-
+ line-height: 1.5;
 }
 h1{
   font-family: sans-serif;
+  font-size: 50px;
+  text-align: center;
   color: #ED4302;
 }
 #risposta{
 background-color: rgb(256,256,256);
-box-shadow: 0 3px 7px rgb(233,230,230);
+box-shadow: 0 3px 7px rgb(220,220,220);
+min-height: 25px;
 }
 
 button:hover{
-    background-color: #ED4302;
+    background-color: rgb(190,190,190);
+    border-radius: 3px;
+    border-width: 2px;
+    border-color: rgb(118,118,118);
+}
+hr{
+  background-color: none;
+  border-color: none;
 }

@@ -2,7 +2,7 @@ function es_tasse(){
  let reddito = parseFloat(document.getElementById("reddito").value);
  let tax, tax_fissa, tot;
 
- if ( !isNaN(reddito) || reddito<0 ){
+ if ( !isNaN(reddito) && reddito>0 ){
     
    if ( reddito>=75000 ){
      tax = 0.43;
