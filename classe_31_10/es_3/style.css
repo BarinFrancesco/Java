@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(240,240,240);
+    text-align: center;
+}
+
+h1{
+    font-family: Verdana;
+    color: rgb(0,90,0);
+}
+
+#input{
+    padding-left: 550px;
+    text-align: left;
+}
+
+#giorni{
+    width: 50px;
+}
+
+#stagione{
+    width: 50px;
+}
+
+#stanza{
+    width: 50px;
+}
+
+#Parcheggio{
+    width: 50px;
+}
+
+#prezzo_finale{
+    min-height: 20px;
+    max-width: 500px;
+    background-color: white;
+}
