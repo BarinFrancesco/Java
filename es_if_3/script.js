@@ -25,7 +25,7 @@ function form_galleria(){
 function form_ristorante(){
 //inizializzo il form dove andrò a scrivere i dati
     document.getElementById("form").innerHTML = `
-    <select id="cascata">
+    <select id="stelle">
     <option name="valutazione" value="1">&#11088</option>
     <option name="valutazione" value="2">&#11088 &#11088</option>
     <option name="valutazione" value="3">&#11088 &#11088 &#11088</option>
@@ -45,6 +45,7 @@ function form_ristorante(){
     <p id="risposta"></p>
 `
 document.querySelector("body").setAttribute("style", "background-color: #4855B7;");
+document.getElementById("output").setAttribute("src", "");
 }
 
 
@@ -89,6 +90,56 @@ function es_immagini(){
 
     function es_ristorante(){
     
-        document.getElementById("risposta").innerText=`ciao`
+        let recensione = document.querySelector("input[name=pos_neg]:checked").value;
+        let stelle = parseInt(document.getElementById("stelle").value);
+        let risposta;
+
+        switch(stelle){
+
+        case 1: 
+
+        if( recensione=="positivo"){ 
+            risposta=`strano, hai lasciato 2 recensioni diverse`;
+        } else{
+            risposta="ci dispiace della tua cattiva esperienza";
+        }
+        break;
+
+        case 2: 
+
+        if( recensione=="positivo"){ 
+            risposta=`strano, hai lasciato 2 recensioni diverse`;
+        } else{
+            risposta=`ci dispiace della tua cattiva esperienza`;
+        }
+        break;
+
+        case 3: 
+
+        if( recensione=="positivo"){ 
+            risposta=`grazie della tua bella recensione`;
+        } else{
+            risposta=`ci dispiace della tua cattiva esperienza`;
+        }
+        break;
+
+        case 4: 
+
+        if( recensione=="positivo"){ 
+            risposta=`Siamo contenti che tu abbia avuto una buona esperienza da noi`;
+        } else{
+            risposta=`Strano, hai lasciato 2 recensioni diverse`;
+        }
+        break;
+
+        default:
+        if( recensione=="positivo"){ 
+               risposta=`Grazie dell'ottima recensione, passa a trovarci presto`;
+            } else{
+              risposta=`Strano, hai lasciato 2 recensioni diverse`;
+            }
+        break;
         }
 
+        document.getElementById("risposta").innerHTML = `${risposta}`
+    }
