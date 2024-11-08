@@ -1,5 +1,6 @@
 function form_galleria(){
 //inizializzo il form dove andrò a scrivere i dati
+    document.getElementById("form").style.display="block";
         document.getElementById("form").innerHTML = `
         <select id="cascata">
         <option name="img" value="mare" id="mare">Mare</option>
@@ -16,6 +17,7 @@ function form_galleria(){
         <br>
         <button onclick="es_immagini()">guarda</button>
         <br>
+        <img src="" id="output">
 
     `
     document.querySelector("body").setAttribute("style", "background-color: #B5954A;");
@@ -24,6 +26,7 @@ function form_galleria(){
 
 function form_ristorante(){
 //inizializzo il form dove andrò a scrivere i dati
+    document.getElementById("form").style.display="block";
     document.getElementById("form").innerHTML = `
     <select id="stelle">
     <option name="valutazione" value="1">&#11088</option>
@@ -90,55 +93,33 @@ function es_immagini(){
 
     function es_ristorante(){
     
-        let recensione = document.querySelector("input[name=pos_neg]:checked").value;
+        let recensione = document.querySelector("input[name=pos_neg]:checked");
         let stelle = parseInt(document.getElementById("stelle").value);
         let risposta;
 
         switch(stelle){
 
         case 1: 
-
-        if( recensione=="positivo"){ 
-            risposta=`strano, hai lasciato 2 recensioni diverse`;
-        } else{
-            risposta="ci dispiace della tua cattiva esperienza";
-        }
-        break;
+        risposta = recensione.value=="positivo"?  `strano, hai lasciato 2 recensioni diverse`: "ci dispiace della tua cattiva esperienza";
+            break;
 
         case 2: 
-
-        if( recensione=="positivo"){ 
-            risposta=`strano, hai lasciato 2 recensioni diverse`;
-        } else{
-            risposta=`ci dispiace della tua cattiva esperienza`;
-        }
-        break;
+        risposta = recensione.value=="positivo"?  `strano, hai lasciato 2 recensioni diverse`: "ci dispiace della tua cattiva esperienza";
+            break;
 
         case 3: 
-
-        if( recensione=="positivo"){ 
-            risposta=`grazie della tua bella recensione`;
-        } else{
-            risposta=`ci dispiace della tua cattiva esperienza`;
-        }
-        break;
+        risposta = recensione.value=="positivo"?  `grazie della tua bella recensione`: "ci dispiace della tua cattiva esperienza";
+            break;
 
         case 4: 
-
-        if( recensione=="positivo"){ 
-            risposta=`Siamo contenti che tu abbia avuto una buona esperienza da noi`;
-        } else{
-            risposta=`Strano, hai lasciato 2 recensioni diverse`;
-        }
-        break;
+        risposta = recensione.value=="positivo"?  `Siamo contenti che tu abbia avuto una buona esperienza da noi`: "Strano, hai lasciato 2 recensioni diverse";
+            break;
 
         default:
-        if( recensione=="positivo"){ 
-               risposta=`Grazie dell'ottima recensione, passa a trovarci presto`;
-            } else{
-              risposta=`Strano, hai lasciato 2 recensioni diverse`;
-            }
-        break;
+        
+        risposta = recensione.value=="positivo"?  `Grazie dell'ottima recensione, passa a trovarci presto`: "Strano, hai lasciato 2 recensioni diverse";
+
+            break;
         }
 
         document.getElementById("risposta").innerHTML = `${risposta}`
