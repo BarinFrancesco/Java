@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasso Carta Forbice</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="main">
+        <h1>SASSO CARTA FORBICE</h1>
+        <label for="risultato">La tua mano:</label>
+        <select name="risultato" id="risultato">
+            <option value="sasso">sasso</option>
+            <option value="carta">carta</option>
+            <option value="forbice">forbice</option>
+        </select>
+
+        <br>
+
+        <button onclick="sasso_carta_forbice()"> comincia</button>
+
+        <div id="risposta">
+            <p>Risultato:</p>
+        </div>
+    </div>    
+</body>
+</html>
