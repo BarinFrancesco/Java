@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <form method="get" id="form_principale">
+        <h1>Iscrizione</h1>
+        <strong><label for="name">Nome:</label></strong>
+        <input type="text" name="mail-nome" id="name" required>
+        <br>
+        <strong><label for="mail">Email:</label></strong>
+        <input type="email" name="mail-nome" id="mail" required>
+        
+        <br>
+
+        <strong><p>Lingue conosciute:</p></strong>
+        <input type="checkbox" name="lingue" id="ingl" required>
+        <label for="ingl">Iglese</label>
+        <br>
+        <input type="checkbox" name="lingue" id="ita" required>
+        <label for="ita">Italiano</label>
+
+        <br>
+        <br>
+
+        <strong><p>Età:</p></strong>
+        <input type="radio" name="eta" id="magg" required>
+        <label for="magg">Maggionenne</label>
+        <br>
+        <input type="radio" name="eta" id="min" required>
+        <label for="min">Minorenne</label>
+        
+        <br>
+        <br>
+
+        <label for="paese">Paese:</label>
+        <select id="paese" required>
+            <option value="italia">Italia</option>
+            <option value="inghilterra">inghilterra</option>
+            <option value="germania">Germania</option>
+            <option value="francia">francia</option>
+        </select>
+
+        <br>
+        <br>
+
+        <button type="submit" onclick="controllo()">Invia dati</button>
+        
+        <br>
+        <br>
+        <button type="reset">Resetta dati</button>
+
+
+        
+
+
+    </form>
+    
+</body>
+</html>

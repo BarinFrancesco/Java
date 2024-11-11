@@ -1,0 +1,41 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f9;
+}
+
+h1{
+    text-align: center;
+    color: #45a049;
+}
+p{
+    margin: 3px;
+}
+
+#form_principale{
+    background-color: rgb(250, 250, 250);
+    width: 20vw;
+    box-shadow: 0 5px 5px rgb(150,150,151);
+    margin:auto;
+    padding: 10px;
+    font-family: verdana;
+    border-radius: 3px;
+}
+
+input[name="mail-nome"]{
+    width: 90%;
+    margin:5px 5px 15px 5px;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+
+
+button{
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    color:white;
+    background-color: #45a049;
+    border-radius: 3px;
+}
