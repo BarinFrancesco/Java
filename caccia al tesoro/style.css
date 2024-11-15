@@ -1,3 +1,31 @@
+body{
+    height: 100vh;
+    margin: 0px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    margin-bottom: 7.5px;
+}
+
+input{
+    margin-bottom: 7.5px;
+    width: 50px;
+} 
+#centra{
+    padding:5px;
+    border: 2px solid rgb(128,128,128);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .but_tab{
     height: 30px;
     width: 30px;

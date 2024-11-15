@@ -37,7 +37,7 @@ function tabella(){
     
     document.getElementById("table").appendChild(new_table);
 
-
+    
 }
 
 function coordinate(x,y){

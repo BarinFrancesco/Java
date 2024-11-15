@@ -9,14 +9,16 @@
 </head>
 <body>
     
-    <label for="righe">Inserire il numero righe della tabella:</label>
-    <input type="number" id="righe">
-    <br>
-    <label for="colonne">Inserire il numero colonne della tabella:</label>
-    <input type="number" id="colonne">
-
-    <button onclick="tabella()"> crea tabella</button>
-    <div id="table"></div>
-    <p id="risposta"></p>
+    <div id="centra">
+        <label for="righe">Inserire il numero righe della tabella:</label>
+        <input type="number" id="righe" min="1">
+        <br>
+        <label for="colonne">Inserire il numero colonne della tabella:</label>
+        <input type="number" id="colonne" min="1">
+        <br>
+        <button onclick="tabella()">Crea tabella</button>
+        <div id="table"></div>
+        <p id="risposta"></p>
+    </div>
 </body>
 </html>
