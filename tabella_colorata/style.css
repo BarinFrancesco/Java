@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+h1{
+    font-family: Verdana;
+    color: rgb(255,120,50)
+}
+
+table{
+    background-color: white;
+    border-collapse:collapse;
+}
+td,tr {
+    height: 50px;
+    width: 50px;
+}
+
+#centra{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid rgb(128,128,128);
+    box-shadow: 0 10px 20px rgb(100,100,100);
+    padding: 15px;
+}
