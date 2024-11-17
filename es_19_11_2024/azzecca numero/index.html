@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azzecca il numero</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="centra_pag">
+    <h1>Indovina il numero</h1>
+    <label for="num">Inserisci il tuo tentativo (1-50):</label>
+    <input type="number" id="num" min="1" max="100">
+    <button onclick="confronta_num()" id="invia">Invia</button>
+    <button onclick="ritenta()" id="ritenta">gioca di nuovo</button>
+    <p id="risposta"></p>
+    </div>
+    
+</body>
+</html>

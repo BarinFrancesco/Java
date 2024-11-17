@@ -15,22 +15,28 @@ function tabella(){
     const tabella = document.createElement(`table`); // creo la tabellla
     
     document.getElementById("content").innerHTML=""; // svuoto il div che contiene la tabella, nel caso questa fosse piana da un uso precendente
-    let righe = document.getElementById("righe"); // assumo in input il n di righe volute
-    let colonne = document.getElementById("colonne");// assumo in input il n di colonne volute
+    let righe = parseInt(document.getElementById("righe").value); // assumo in input il n di righe volute
+    let colonne = parseInt(document.getElementById("colonne").value);// assumo in input il n di colonne volute
     // queste 3 variabili mi serviranno per creare tutte le celle della tabella
     let crea_righe;
     let crea_colonne;
     
+    //verifico che non ci siano errori in input e nel caso ci siano blocco tutto il procedimento 
+    if (isNaN(righe) || isNaN(colonne) || righe<0 || colonne<0){
+        alert("errore nei dati in input");
+        return;
+    }
+
     // questo for crea tutte le righe volute in input dall'utente
-    for(let i=0; i<righe.value; i++){
+    for(let i=0; i<righe; i++){
         
         crea_righe = document.createElement("tr"); // questo elemento crea effettivamente la riga 
 
         //questo for crea tante celle (quindi colonne) quante selezionato dall'utente
-        for(let x=0; x<colonne.value; x++){ 
+        for(let x=0; x<colonne; x++){ 
             let chose_color= color() // avvio la funzione color() per avere un colore randomico con cui colorare la mia cella
             crea_colonne = document.createElement("td"); // creo la riga
-            crea_colonne.style.backgroundColor = chose_color; // assegno alla riga come sfonro il colore randomico
+            crea_colonne.style.backgroundColor = chose_color; // assegno alla riga come sfondo il colore randomico
             crea_righe.appendChild(crea_colonne); // aggiungo la tabella appena creata alla riga
         }
         

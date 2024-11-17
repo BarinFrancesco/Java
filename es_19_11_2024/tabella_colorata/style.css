@@ -9,6 +9,32 @@ h1{
     color: rgb(255,120,50)
 }
 
+label{
+    margin:5px;
+}
+
+input{
+    margin: 5px;
+    width: 50px;
+}
+
+button{
+    margin: 5px;
+    background-color: rgb(255,120,50);
+    border: 0px;
+    border-radius: 15px;
+    height: 30px;
+    font-size: 15px;
+}
+
+button:hover{
+    box-shadow: 0 3px 4px rgb(128,128,128);
+}
+
+button:active{
+    box-shadow: 0 3px 8px rgb(128,128,128);
+}
+
 table{
     background-color: white;
     border-collapse:collapse;

@@ -17,9 +17,11 @@ function tabella(){ //questa funzione crea la taballa da cui cercare il tesoro
     y_tesoro = Math.floor((Math.random()*righe)+1);
     x_tesoro = Math.floor((Math.random()*colonne)+1);
 
-    if(isNaN(righe) || isNaN(colonne)){
+    // verifico che i valori inseriti siano dei numeri e positivi
+    if(isNaN(righe) || isNaN(colonne) || righe<0 || colonne<0){
         alert("errore nei dati in input");
-        input.value="";
+        document.getElementById("righe").value="";
+        document.getElementById("colonne").value="";
     }
 
     document.getElementById("table").innerHTML=``; // scuoto il div contenente la tabella nel caso fosse pieno da un tantativo precendente

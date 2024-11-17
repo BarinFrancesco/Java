@@ -10,13 +10,14 @@
 <body>
     
     <div id="centra">
+        <h1>Trova il tesoro</h1>
         <label for="righe">Inserire il numero righe della tabella:</label>
         <input type="number" id="righe" min="1">
         <br>
         <label for="colonne">Inserire il numero colonne della tabella:</label>
         <input type="number" id="colonne" min="1">
         <br>
-        <button onclick="tabella()">Crea tabella</button>
+        <button onclick="tabella()" id="crea">Crea tabella</button>
         <div id="table"></div>
         <p id="risposta"></p>
     </div>

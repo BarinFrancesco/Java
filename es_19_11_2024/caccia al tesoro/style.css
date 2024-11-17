@@ -1,7 +1,7 @@
 body{
-    height: 100vh;
+    height: 90vh;
     margin: 0px;
-    background-color: aliceblue;
+    background-color: rgb(240,248,255);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -20,6 +20,21 @@ input{
 button:active{
     background-color: rgb(45, 120, 80);
 }
+
+h1{
+    font-family: verdana;
+    font-size: 25px;
+    margin: 0px;
+    color: rgb(65, 65, 255);
+}
+
+.but_tab{
+    height: 30px;
+    width: 30px;
+    background-color: rgb(45, 75, 75);
+    border-radius: 5px;
+}
+
 #centra{
     padding:5px;
     border: 2px solid rgb(128,128,128);
@@ -30,9 +45,20 @@ button:active{
     align-items: center;
 }
 
-.but_tab{
+#crea{
+    margin: 5px;
+    background-color: rgb(65, 65, 255);
+    border: none;
+    border-radius: 15px;
     height: 30px;
-    width: 30px;
-    background-color: rgb(45, 75, 75);
-    border-radius: 5px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+#crea:hover{
+    box-shadow: 0 3px 4px rgb(128,128,128);
+}
+
+#crea:active{
+    box-shadow: 0 3px 12px rgb(128,128,128);
 }
