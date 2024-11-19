@@ -47,6 +47,7 @@ function tabella(){ //questa funzione crea la taballa da cui cercare il tesoro
     }
     
     document.getElementById("table").appendChild(new_table);
+    document.querySelector("body").style.height = `auto`;
 
 }
 
