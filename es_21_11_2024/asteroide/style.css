@@ -1,9 +1,15 @@
+body{
+    text-align: center;
+}
+
 .asteroidi{
     height: 50px;
     width: 50px;
 }
-/*
-td,tr{
-    height: 50px;
-    width: 50px;
-}*/
+
+#asteroidi{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

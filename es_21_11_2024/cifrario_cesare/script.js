@@ -34,12 +34,27 @@ function cambia_messaggio(x){
             
             let codice = str.charCodeAt(i);
 
-            if (codice!=32){
-                if (codice < 119 ){
-                    codice+=3;
+            if (codice!=32 && codice!=44 && codice!=39 && codice!=59 && codice!=58 && codice!=63){
+                
+                if (codice>=97 && codice<=122){
+
+                    if (codice < 119 ){
+                        codice+=3;
+                    } else {
+                        codice = codice-23;
+                    }
+
                 } else {
-                    codice = codice-23;
-                 }
+
+                    if (codice < 87 ){
+                        codice+=3;
+                    } else {
+                        codice = codice-23;
+                    }
+
+                }
+
+
             }
             traduzione += String.fromCharCode(codice);
         }
@@ -54,16 +69,29 @@ function cambia_messaggio(x){
             
             let codice = str.charCodeAt(i);
 
-            if (codice!=32){
-                if (codice > 99){
-                    codice-=3;
+            if (codice!=32 && codice!=44 && codice!=39 && codice!=59 && codice!=58 && codice!=63){
+
+                if (codice>=97 && codice<=122){
+
+                    if (codice > 99){
+                        codice-=3;
+                    } else {
+                        codice = codice+23;
+                    } 
+
                 } else {
-                    codice = codice+23;
+
+                    if (codice > 67){
+                        codice-=3;
+                    } else {
+                        codice = codice+23;
+                    }
                 }
-            }
-             traduzione += String.fromCharCode(codice);
+             
             }   
 
+            traduzione += String.fromCharCode(codice);
+        }
         document.getElementById(`risposta`).innerHTML = `${traduzione}`;
     }
 

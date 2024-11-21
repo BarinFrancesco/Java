@@ -5,6 +5,7 @@ let tentativi;
 function genera(){
 
     let widht = document.getElementById(`n_asteroidi`).value;
+    document.getElementById(`risposta`).innerHTML =``;
     let table;
 
     if( widht <= 5 ){
@@ -58,7 +59,7 @@ function genera(){
     if (tentativi>0){
     if ( x == x_meteora && y == y_meteora ){
 
-        document.getElementById(`risposta`).innerHTML = `Hai trovato il metrorite; hai svato la terra!!`;
+        document.getElementById(`risposta`).innerHTML = `Hai trovato il metrorite; hai salvato la terra!!`;
         document.getElementById(`${x}-${y}`).innerHTML = `☄️`;
 
     } else {
@@ -85,7 +86,8 @@ function genera(){
 
     tentativi-=1;
 } else {
-    alert("hai finito i tentativi");
+
+    document.getElementById(`risposta`).innerHTML =`hai finito i tentaivi, purtroppo la terra verrà distrutta`
     return;
 }
 

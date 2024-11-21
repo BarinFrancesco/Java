@@ -4,6 +4,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
+    height: 75vh;
 }
 
 .btn_r{
@@ -36,7 +37,8 @@ body{
     background-color:rgb(255, 235, 205);
     height: 100%;
     width: 50%;
-    transition: 1s;
+    transition: 1s; 
+    padding: 25px;
 }
 
 #crittografa:hover{
@@ -54,6 +56,7 @@ body{
     height: 100%;
     width: 50%;
     transition: 1s;
+    padding: 25px;
 }
 
 #decritta:hover{
