@@ -7,6 +7,12 @@ body{
     height: 75vh;
 }
 
+h1{
+    color: rgb(185, 155, 125);
+    text-align: center;
+    height: 50px;
+}
+
 .btn_r{
     border-radius: 9px;
     background-color: rgb(255, 235, 205);
