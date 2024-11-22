@@ -4,18 +4,18 @@ function genera_form(n){
         document.getElementById(`decritta`).innerHTML = `<button onclick="genera_form(2)" class="btn_r" id="genera_form_2"> Decritta il messaggio</button>`;
         
         document.getElementById(`crittografa`).innerHTML=`
-            <label for="messaggio_da_crittografare">Inserisci il messaggio che devi crittografare tutto in minuscolo:</label>
+            <label for="messaggio_da_crittografare">Inserisci il messaggio che devi crittografare:</label>
             <input type="text" id="messaggio_da_crittografare">
-            <button onclick="cambia_messaggio(1)" class="btn_l"> Invia </button>
+            <button onclick="cambia_messaggio(1)" class="btn_l"> Trasforma </button>
             <p id="risposta"></p>
         `;
     } else{
         document.getElementById(`crittografa`).innerHTML = `<button onclick="genera_form(1)" class="btn_l" id="genera_form_1"> Cripta il messaggio</button>`;
 
         document.getElementById(`decritta`).innerHTML = `
-            <label for="messaggio_da_crittografare">Inserisci il messaggio che devi crittografare:</label>
+            <label for="messaggio_da_crittografare">Inserisci il messaggio che devi decrittare:</label>
             <input type="text" id="messaggio_da_decrittare">
-            <button onclick="cambia_messaggio(2)" class="btn_r"> Invia </button>
+            <button onclick="cambia_messaggio(2)" class="btn_r"> Trasforma </button>
             <p id="risposta"></p>
         `;
     }

@@ -8,13 +8,25 @@ body{
 }
 
 .btn_r{
+    border-radius: 9px;
     background-color: rgb(255, 235, 205);
     border-color: rgb(255, 235, 205);
 }
 
 .btn_l{
+    border-radius: 9px;
     background-color: rgb(245, 225, 195);
     border-color: rgb(245, 225, 195);
+}
+
+#genera_form_1{
+    height: 40px;
+    border-radius: 20px;
+}
+
+#genera_form_2{
+    height: 40px;
+    border-radius: 20px;
 }
 
 #centra{
