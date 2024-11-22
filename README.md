@@ -1,2 +1,2 @@
 # Javascript school progect. 
-# property of: Barin Francesco.
+# Property of: Barin Francesco.
