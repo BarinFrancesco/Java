@@ -1,1 +1,2 @@
-# 1Java
+# Javascript school progect. 
+# property of: Barin Francesco.
