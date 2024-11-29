@@ -51,7 +51,7 @@ function operazione(x){
         
     }
 
-    if(riga==1 && primo_numero!=``){
+    if(riga == 1 && primo_numero.innerText!=``){
         riga = 2;
     } else {
         riga = 1;
@@ -115,6 +115,6 @@ function calcola(){
     }
     document.getElementById(`num_1`).innerText = risultato; 
     document.getElementById(`num_2`).innerText = ``; 
-    document.getElementById(`history`).innerHTML += `<br> <div id="inner_history"><p id="history_p">${num_1.toFixed(4)}${segno}${num_2.toFixed(4)}=${risultato.toFixed(4)}</p></div> `
+    document.getElementById(`history`).innerHTML += `<br> <div id="inner_history"><p id="history_p">${num_1.toFixed(3)}${segno}${num_2.toFixed(3)}=${risultato.toFixed(3)}</p></div> `
     riga = 1;
 }

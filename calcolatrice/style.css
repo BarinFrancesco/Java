@@ -22,11 +22,12 @@ table{
 
 p{
     padding: 5px;
-    height: 25px;
+    height: 35px;
     width: 95%;
     border: none;
     background-color: rgb(250, 250, 250);
     margin: 0;
+    font-size: 25px;
 }
 
 h1{
@@ -52,7 +53,7 @@ text-align: center;
     flex-direction: column;
     align-items: center;
     height: 515px;
-    width: 250px;
+    width: 25vw;
     font-size: 15px;
     border: 1px solid rgb(230,230,230);
     border-radius: 15px;
@@ -65,16 +66,25 @@ text-align: center;
     flex-direction: row;
     justify-content: center;
     align-items:center ;
-    width: 200px;
+    width: 85%;
     height: min-content;
     border: 1px solid rgb(230,230,230);
     border-radius: 15px;
     background-color: rgb(240,240,240);
-
+    padding: 5px;
 }
 
 #history_p{
     background-color: rgb(240,240,240);
     height: min-content;
     width: min-content;
+}
+
+#num_1{
+    color: rgb(0,0,0);
+}
+
+#num_2{
+    color: rgb(100,100,100);
+    margin-bottom: 5px;
 }
