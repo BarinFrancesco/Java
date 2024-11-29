@@ -6,14 +6,14 @@ align-items: center;
 }
 
 button{
-    height: 50px;
-    width: 50px;
-    border-radius: 5px;
+    height: 75px;
+    width: 75px;
+    border-radius: 10px;
     border: 1px solid rgb(128,128,128);
 }
 
 button:active{
-    background-color: rgb(128,128,128);
+    background-color: rgb(118,118,118);
 }
 
 table{
@@ -21,11 +21,16 @@ table{
 }
 
 p{
+    padding: 5px;
     height: 25px;
     width: 95%;
     border: none;
     background-color: rgb(250, 250, 250);
     margin: 0;
+}
+
+h1{
+text-align: center;
 }
 
 .input_column{
@@ -35,4 +40,41 @@ p{
 #invio{
     background-color: rgb(35, 85, 185);
     color: rgb(255,255,255);
+}
+
+#invio:active{
+    background-color: rgb(15, 65, 165);
+    color: rgb(255,255,255);
+}
+
+#history{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 515px;
+    width: 250px;
+    font-size: 15px;
+    border: 1px solid rgb(230,230,230);
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#inner_history{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center ;
+    width: 200px;
+    height: min-content;
+    border: 1px solid rgb(230,230,230);
+    border-radius: 15px;
+    background-color: rgb(240,240,240);
+
+}
+
+#history_p{
+    background-color: rgb(240,240,240);
+    height: min-content;
+    width: min-content;
 }
