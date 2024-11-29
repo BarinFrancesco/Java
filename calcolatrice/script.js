@@ -18,18 +18,22 @@ function operazione(x){
 
         case 1:
             segno = `+`;
+            primo_numero.innerText += segno;
             break;
         
         case 2:
            segno = `-`;
+           primo_numero.innerText += segno;
             break;
         
         case 3:
             segno = `*`;
+            primo_numero.innerText += segno;
             break;
 
         case 4:
             segno = `/`;
+            primo_numero.innerText += segno;
             break;
 
         case 5:
@@ -39,14 +43,17 @@ function operazione(x){
 
         case 6:
             segno = `√`;
+            primo_numero.innerText += segno;
             break;
 
         case 7:
             segno = `x^2`;
+            primo_numero.innerText += `^2`;
             break;
         
         case 8:
             segno = `1/x`;
+            primo_numero.innerText += `/x`;
             break;
         
     }
