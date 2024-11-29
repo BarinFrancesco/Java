@@ -10,11 +10,8 @@ for (let i = 0; i<24; i){
 
     scrivi += myArray[i];
     i++;
-
     }
-
     scrivi += `<br>`
-
 }
 
 document.body.innerHTML = scrivi ;

@@ -37,7 +37,7 @@ function unisci(){
     }
 
     for (let i = 0; i<fusione.length; i++){
-        risposta += `${fusione[i]}; `;
+        risposta += `${fusione[i]} ; `;
     }
     document.getElementById(`risposta`).innerHTML = `${risposta}}`
 }

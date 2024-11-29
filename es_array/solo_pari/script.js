@@ -33,5 +33,5 @@ function trova_pari(){
             risposta += `${num_pari[i]}; `;
         }
 
-        document.body.innerHTML += `${risposta}} `;
+        document.getElementById(`risposta`).innerHTML = `${risposta}} `;
 }

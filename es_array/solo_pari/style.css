@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(15,15,15);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+h1{
+    font-family: verdana;
+    color: rgb(200, 100, 35);
+    margin: 10px;
+}
+
+button{
+    background-color: rgb(200, 100, 35);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 3px;
+    width: 150px;
+    margin: 10px;
+}
+
+label{
+    margin: 10px;
+}
+
+input{
+    width: 75%;
+}
