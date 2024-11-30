@@ -16,6 +16,7 @@ function calcola(){
         exp++;
         } else {
             alert(`il numero che hai inserito non è binario`);
+            document.getElementById("array1").value = ``;
             return;
         }
     }

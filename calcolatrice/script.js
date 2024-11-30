@@ -43,16 +43,19 @@ function operazione(x){
 
         case 6:
             segno = `√`;
+            secondo_numero = document.getElementById(`num_2`).innerText = `0`;
             primo_numero.innerText += segno;
             break;
 
         case 7:
             segno = `x^2`;
+            secondo_numero = document.getElementById(`num_2`).innerText = `0`;
             primo_numero.innerText += `^2`;
             break;
         
         case 8:
             segno = `1/x`;
+            secondo_numero = document.getElementById(`num_2`).innerText = `0`;
             primo_numero.innerText += `/x`;
             break;
         
@@ -105,6 +108,7 @@ function calcola(){
         
         case `x^2`:
             risultato = num_1*num_1;
+            console.log(risultato)
             break;
 
         case `1/x`:
@@ -119,9 +123,12 @@ function calcola(){
             break;
     }
 
+    } else {
+        alert(`sono nan`);
     }
+
     document.getElementById(`num_1`).innerText = risultato; 
     document.getElementById(`num_2`).innerText = ``; 
-    document.getElementById(`history`).innerHTML += `<br> <div id="inner_history"><p id="history_p">${num_1.toFixed(3)}${segno}${num_2.toFixed(3)}=${risultato.toFixed(3)}</p></div> `
+    document.getElementById(`results`).innerHTML += `<br> <div id="inner_history"><p id="history_p">${num_1.toFixed(4)}${segno}${num_2.toFixed(4)}=${risultato.toFixed(4)}</p></div> `
     riga = 1;
 }
