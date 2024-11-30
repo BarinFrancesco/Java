@@ -7,25 +7,27 @@ align-items: center;
 
 button{
     height: 75px;
-    width: 75px;
-    border-radius: 10px;
-    border: 1px solid rgb(128,128,128);
+    width: 105px;
+    border-radius: 5px;
+    border: 1px solid rgb(229,229,229);
+    background-color: rgb(249,249,249);
 }
 
 button:active{
-    background-color: rgb(118,118,118);
+    background-color: rgb(240,240,240);
 }
 
 table{
     border-collapse: collapse;
+    background-color: rgb(243,243,243);
 }
 
 p{
     padding: 5px;
     height: 35px;
-    width: 95%;
+    width: 97%;
     border: none;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(243,243,243);
     margin: 0;
     font-size: 25px;
 }
@@ -36,6 +38,14 @@ text-align: center;
 
 .input_column{
     padding: 0px;
+}
+
+.num{
+    background-color: rgb(255,255,255);
+}
+
+.num:active{
+    background-color: rgb(250,250,250);
 }
 
 #invio{
