@@ -6,7 +6,7 @@ function codice(){
     let cognome = user_name(`cognome`);
     let nome = user_name(`nome`);
     let anno = data_nascita();
-
+    let codice_finale = codice_catastale();
 
     codice_fiscale = `${cognome}${nome}${anno}`;
     alert(codice_fiscale);
@@ -128,4 +128,8 @@ function data_nascita(){
     data_code += `${(data[2]%100).toString().padStart(2, '0')}${mese}${giorno}`;
 
     return data_code;
+}
+
+function codice_catastale(){
+    
 }
