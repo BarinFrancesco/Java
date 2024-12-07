@@ -1,28 +1,38 @@
-let codice_fiscale =``;
-const vowels = "aeiou";
-
 function codice(){
-    
-    let cognome = user_name(`cognome`);
-    let nome = user_name(`nome`);
-    let anno = data_nascita();
+    let codice_fiscale =``;
+    let cognome = user_name(`cognome`).toUpperCase();
+    let nome = user_name(`nome`).toUpperCase();
+    let anno = data_nascita().toUpperCase();
     let codice_finale = codice_catastale();
 
-    codice_fiscale = `${cognome}${nome}${anno}`;
-    alert(codice_fiscale);
+    codice_fiscale = `${cognome}${nome}${anno}${codice_finale}`;
+    document.getElementById("risposta").innerHTML = `Il tuo codice fiscale è: ${codice_fiscale}`;
 }
 
 function user_name(n){
-
+    const vowels = "aeiou";
     let nome = document.getElementById(`${n}`).value;
     let name_caracther = ``;
     let conta = 0;
 
     nome = nome.toLowerCase();
 
+    if (nome==``){
+        return;
+    } 
+
     for (let i = 0; i<nome.length; i++){
 
-        if(!(vowels.includes(nome[i])) && conta<3) {   //==="a" || nome[i]==="e" || nome[i]==="i" || nome[i]==="o" || nome[i]==="u"
+        if(!(vowels.includes(nome[i]))) {   
+            conta += 1;
+        }
+    }
+
+if(conta<4){
+    conta = 0;
+    for (let i = 0; i<nome.length; i++){
+
+        if(!(vowels.includes(nome[i])) && conta<3) {   
             name_caracther += nome[i];
             conta += 1;
         }
@@ -43,6 +53,22 @@ function user_name(n){
         }
 
     }
+
+} else {
+
+    conta = 0;
+    for (let i = 0; i<nome.length; i++){
+
+        if(!(vowels.includes(nome[i])) && conta<4) {   
+            if (conta==2){
+
+            } else {
+            name_caracther += nome[i];
+            conta += 1;
+            }
+        }
+    }
+}
 
     return name_caracther;
 }
@@ -130,6 +156,41 @@ function data_nascita(){
     return data_code;
 }
 
+function leggi_lista(input){
+    let testo= ``;
+    let lista_val = input.files[0];
+
+        if (lista_val){
+            let lettore = new FileReader();
+
+            lettore.readAsText(lista_val);
+
+            lettore.onload = function(){
+                testo = lettore.result;
+
+                riempi_select(testo);
+            }
+        }
+
+
+}
+
+function riempi_select(testo){
+    let lista = testo.split("\r\n");
+    let elenco = document.getElementById("comune");
+    let element_select;
+
+    for ( let i = 0; i< lista.length; i++){
+        element_select = document.createElement("option");
+        element_select.text = lista[i];
+        element_select.value = lista[i];
+        elenco.add(element_select);
+    }
+}
+
 function codice_catastale(){
-    
+    let value = document.getElementById("comune").value;
+    value = value.split(";");
+
+    return value[1];
 }

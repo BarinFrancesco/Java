@@ -8,26 +8,34 @@
     <script src="script.js"></script>
 </head>
 <body>
-    
-    <form>
-        <label for="nome">Inserire il proprio nome:</label>
+    <div id="tessera_sanitaria">
+        <div id="banda_sup"><img src="img/logo_repubblica.png" > <div id="testo superiore"> <p>REPUBBILCA<br> ITALIANA<br><br> MINISTERO<br> DELLE<br> FINANZE</p></div></div>
+        <div id="form">
+        <label for="nome">Nome:</label>
         <input type="text" id="nome" placeholder="Mario">
         <br>
-        <label for="cognome">Inserire il proprio cognome:</label>
+        <label for="cognome">Cognome:</label>
         <input type="text" id="cognome" placeholder="Rossi">
         <br>
-        <label for="anno">Inserire il proprio anno di nascita:</label>
+        <label for="anno">Anno di nascita:</label>
         <input type="text" id="anno" placeholder="gg/mm/aaaa">
         <br>
-        <label for="comune">Inserire il proprio comune di nascita:</label>
-        <input type="text" id="comune" placeholder="Abano">
+        <label for="comune">Comune di nascita: </label>
+        <select id="comune"></select>
         <br>
         <p>Sesso</p>
         <input type="radio" name="sesso" id="sesso_m" value="m">
         <label for="m">Maschio</label>
         <input type="radio" name="sesso" id="sesso_f" value="f">
         <label for="f">Femmina</label>
-    </form>
+        <br>
+        <br>
+        <input type="file" id="input_file" onchange="leggi_lista(this)">
+        
     <button onclick="codice()">Calcola</button>
+    <p id="risposta"></p>
+    </div>  
+    </div>
+
 </body>
 </html>
