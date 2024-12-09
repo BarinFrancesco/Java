@@ -28,7 +28,7 @@ function user_name(n){
         }
     }
 
-if(conta<=4){
+if(conta<4){
     conta = 0;
     for (let i = 0; i<nome.length; i++){
 
@@ -59,7 +59,7 @@ if(conta<=4){
     conta = 0;
     for (let i = 0; i<nome.length; i++){
 
-        if(!(vowels.includes(nome[i])) && conta<4) {   
+        if(!(vowels.includes(nome[i])) && conta<=4) {   
             if (conta==2){
 
             } else {
