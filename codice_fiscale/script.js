@@ -9,6 +9,7 @@ function codice(){
     document.getElementById("risposta").innerHTML = `Il tuo codice fiscale è: ${codice_fiscale}`;
 }
 
+
 function user_name(n){
     const vowels = "aeiou";
     let nome = document.getElementById(`${n}`).value;
@@ -18,8 +19,11 @@ function user_name(n){
     nome = nome.toLowerCase();
 
     if (nome==``){
+        alert("ci sono dei campi mancanti");
         return;
     } 
+
+if( n==`nome` ){
 
     for (let i = 0; i<nome.length; i++){
 
@@ -28,50 +32,77 @@ function user_name(n){
         }
     }
 
-if(conta<4){
-    conta = 0;
-    for (let i = 0; i<nome.length; i++){
-
-        if(!(vowels.includes(nome[i])) && conta<3) {   
-            name_caracther += nome[i];
-            conta += 1;
-        }
-    }
-
-    if(conta<3){
-
+    if(conta<4){
+        conta = 0;
         for (let i = 0; i<nome.length; i++){
 
-            if ((vowels.includes(nome[i])) && conta<3){
+            if(!(vowels.includes(nome[i])) && conta<3) {   
                 name_caracther += nome[i];
                 conta += 1;
             }
         }
 
         if(conta<3){
-                name_caracther +=`x`
+
+            for (let i = 0; i<nome.length; i++){
+
+                if ((vowels.includes(nome[i])) && conta<3){
+                    name_caracther += nome[i];
+                    conta += 1;
+                }
+            }
+
+            if(conta<3){
+                    name_caracther +=`x`
+            }
+
         }
 
-    }
+    } else {
 
-} else {
+        conta = 0;
+        for (let i = 0; i<nome.length; i++){
 
-    conta = 0;
-    for (let i = 0; i<nome.length; i++){
-
-        if(!(vowels.includes(nome[i])) && conta<=4) {   
-            if (conta==2){
-
-            } else {
-            name_caracther += nome[i];
-            conta += 1;
+            if(!(vowels.includes(nome[i])) && conta<4) {   
+                if (conta!=1){
+                    name_caracther += nome[i];
+                    
+                } else {
+                }
+                conta += 1;
             }
         }
     }
+} else {
+
+        for (let i = 0; i<nome.length; i++){
+
+            if(!(vowels.includes(nome[i])) && conta<3) {   
+                name_caracther += nome[i];
+                conta += 1;
+            }
+        }
+
+        if(conta<3){
+
+            for (let i = 0; i<nome.length; i++){
+
+                if ((vowels.includes(nome[i])) && conta<3){
+                    name_caracther += nome[i];
+                    conta += 1;
+                }
+            }
+
+            if(conta<3){
+                    name_caracther +=`x`
+            }
+
+        }
 }
 
     return name_caracther;
 }
+
 
 function data_nascita(){
     let data = document.getElementById("anno").value;
@@ -79,6 +110,12 @@ function data_nascita(){
     let mese;
     let giorno;
     let sesso = document.querySelector(`input[name='sesso']:checked`).value;
+
+    if (data==``){
+        alert("ci sono dei campi mancanti");
+        return;
+    } 
+    
     data = data.split("/");
 
 
@@ -156,6 +193,7 @@ function data_nascita(){
     return data_code;
 }
 
+
 function leggi_lista(input){
     let testo= ``;
     let lista_val = input.files[0];
@@ -175,6 +213,7 @@ function leggi_lista(input){
 
 }
 
+
 function riempi_select(testo){
     let lista = testo.split("\r\n");
     let elenco = document.getElementById("comune");
@@ -187,6 +226,7 @@ function riempi_select(testo){
         elenco.add(element_select);
     }
 }
+
 
 function codice_catastale(){
     let value = document.getElementById("comune").value;
