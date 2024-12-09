@@ -8,6 +8,10 @@ body{
 img {
     margin: 15px;
 }
+
+p{
+    margin: 0px;
+}
 #banda_sup{
     display: flex;
     flex-direction: row;
