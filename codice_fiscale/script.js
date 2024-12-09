@@ -28,7 +28,7 @@ function user_name(n){
         }
     }
 
-if(conta<4){
+if(conta<=4){
     conta = 0;
     for (let i = 0; i<nome.length; i++){
 
