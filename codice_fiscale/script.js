@@ -6,7 +6,14 @@ function codice(){
     let codice_finale = codice_catastale();
 
     codice_fiscale = `${cognome}${nome}${anno}${codice_finale}`;
+
+    let carattere_controllo = check_digit(`${codice_fiscale}`);
+
+    codice_fiscale += carattere_controllo;
+
     document.getElementById("risposta").innerHTML = `Il tuo codice fiscale è: ${codice_fiscale}`;
+
+    //manca controllo finale
 }
 
 
@@ -18,8 +25,8 @@ function user_name(n){
 
     nome = nome.toLowerCase();
 
-    if (nome==``){
-        alert("ci sono dei campi mancanti");
+    if (nome==`` || nome.length<2){
+        alert("C'è un errore nel tuo nome");
         return;
     } 
 
@@ -105,24 +112,19 @@ if( n==`nome` ){
 
 
 function data_nascita(){
-    let data = document.getElementById("anno").value;
+    let data = document.getElementById('data').value;
     let data_code=``;
     let mese;
     let giorno;
     let sesso = document.querySelector(`input[name='sesso']:checked`).value;
 
-    if (data==``){
-        alert("ci sono dei campi mancanti");
-        return;
-    } 
-    
-    data = data.split("/");
 
-
-    if(data[0]>31 || data[0]<0 || data[1]>12 || data[1]<0 || data[2]>2024 || data[2]<1900){
-        alert("C'è unerrore nella data");
+    if(data==``){
+        alert("C'è un errore nella data");
         return;
     }
+
+    data = data.split("-");
 
     switch (parseInt(data[1])){
         case 1:
@@ -183,12 +185,12 @@ function data_nascita(){
     }
 
     if (sesso == `f`){
-        giorno = parseInt(data[0])+40;
+        giorno = parseInt(data[2])+40;
     } else {
-        giorno = data[0].toString().padStart(2, '0');
+        giorno = data[2].toString().padStart(2, '0');
     }
 
-    data_code += `${(data[2]%100).toString().padStart(2, '0')}${mese}${giorno}`;
+    data_code += `${(data[0]%100).toString().padStart(2, '0')}${mese}${giorno}`;
 
     return data_code;
 }
@@ -233,4 +235,45 @@ function codice_catastale(){
     value = value.split(";");
 
     return value[1];
+}
+
+function check_digit(codice){
+    let somma = 0;
+    let aggiunta=0;
+
+    const valoriDispari = {
+        "A":0, "B":1, "C":2, "D":3, "E":4, "F":5, "G":6, "H":7, "I":8, 
+        "J":9, "K":10, "L":11, "M":12, "N":13, "O":14, "P":15, "Q":16, "R":17, 
+        "S":18, "T":19, "U":20, "V":21, "W":22, "X":23, "Y":24, "Z":25, "0":0,
+        "1":1, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9,
+    }
+
+    const valoriPari = {
+        "A":1, "B":0, "C":5, "D":7, "E":9, "F":13, "G":15, "H":17, "I":19, 
+        "J":21, "K":2, "L":4, "M":18, "N":20, "O":11, "P":3, "Q":6, "R":8, 
+        "S":12, "T":14, "U":16, "V":10, "W":22, "X":25, "Y":24, "Z":23, "0":1,
+        "1":0, "2":5, "3":7, "4":9, "5":13, "6":15, "7":17, "8":19, "9":21,
+    }
+
+    for (let i = 0; i<codice.length; i++){
+
+        if(i%2 == 0){
+
+            aggiunta = valoriPari[`${codice[i]}`];
+            somma += aggiunta;
+
+
+        }else{
+
+            aggiunta = valoriDispari[`${codice[i]}`];
+            somma += aggiunta;
+
+        }
+
+    }
+    somma = somma%26;
+
+    let char = String.fromCharCode(somma);
+    alert(char);
+    return char;
 }
