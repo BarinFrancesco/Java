@@ -271,8 +271,8 @@ function check_digit(codice){
         }
 
     }
-    somma = somma%26;
-
+    somma = (somma%26)+65;
+    alert(somma);
     let char = String.fromCharCode(somma);
     alert(char);
     return char;
