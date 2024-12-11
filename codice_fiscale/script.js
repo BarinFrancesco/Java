@@ -1,9 +1,14 @@
 function codice(){
     let codice_fiscale =``;
-    let cognome = user_name(`cognome`).toUpperCase();
-    let nome = user_name(`nome`).toUpperCase();
-    let anno = data_nascita().toUpperCase();
+    let cognome = user_name(`cognome`);
+    let nome = user_name(`nome`);
+    let anno = data_nascita();
     let codice_finale = codice_catastale();
+
+    if (!cognome || !nome || !anno || !codice_finale){
+        alert("Impossibile calcolare il codice: non hai inserito tutti i dati");
+        return;
+    }
 
     codice_fiscale = `${cognome}${nome}${anno}${codice_finale}`;
 
@@ -11,9 +16,9 @@ function codice(){
 
     codice_fiscale += carattere_controllo;
 
-    document.getElementById("risposta").innerHTML = `Il tuo codice fiscale è: ${codice_fiscale}`;
 
-    //manca controllo finale
+    document.getElementById("risposta").innerHTML = `Il tuo codice fiscale è: ${codice_fiscale.toUpperCase()}`;
+
 }
 
 
@@ -27,7 +32,7 @@ function user_name(n){
 
     if (nome==`` || nome.length<2){
         alert("C'è un errore nel tuo nome");
-        return;
+        return false;
     } 
 
 if( n==`nome` ){
@@ -121,7 +126,7 @@ function data_nascita(){
 
     if(data==``){
         alert("C'è un errore nella data");
-        return;
+        return false;
     }
 
     data = data.split("-");
@@ -232,6 +237,10 @@ function riempi_select(testo){
 
 function codice_catastale(){
     let value = document.getElementById("comune").value;
+
+    if(value==""){
+        return false;
+    }
     value = value.split(";");
 
     return value[1];
@@ -272,8 +281,6 @@ function check_digit(codice){
 
     }
     somma = (somma%26)+65;
-    alert(somma);
     let char = String.fromCharCode(somma);
-    alert(char);
     return char;
 }
