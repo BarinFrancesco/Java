@@ -39,3 +39,17 @@ p{
     width: 50%;
 }
 
+#calcola{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(3,145,66);
+    color: rgb(255,255,255);
+    text-decoration: none;
+    transition: 3.5s;
+    height: 25px;
+}
+
+#calcola:hover{
+    text-decoration: underline;
+}
+
