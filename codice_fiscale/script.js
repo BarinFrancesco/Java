@@ -1,7 +1,7 @@
 function codice(){
     let codice_fiscale =``;
-    let cognome = user_name(`cognome`);
-    let nome = user_name(`nome`);
+    let cognome = user_surname();
+    let nome = user_name();
     let anno = data_nascita();
     let codice_finale = codice_catastale();
 
@@ -22,43 +22,41 @@ function codice(){
 }
 
 
-function user_name(n){
+function user_name(){
     const vowels = "aeiou";
-    let nome = document.getElementById(`${n}`).value;
+    let nome = document.getElementById(`nome`).value;
     let name_caracther = ``;
     let conta = 0;
 
     nome = nome.toLowerCase();
 
-    if (nome==`` || nome.length<2){
+    if (nome.length<2){
         alert("C'è un errore nel tuo nome");
         return false;
     } 
 
-if( n==`nome` ){
-
     for (let i = 0; i<nome.length; i++){
 
-        if(!(vowels.includes(nome[i]))) {   
+        if(!(vowels.includes(nome[i])) && conta<4) {   
+            name_caracther += nome[i];
             conta += 1;
         }
     }
 
-    if(conta<4){
-        conta = 0;
-        for (let i = 0; i<nome.length; i++){
+alert(conta)
+    if( conta >= 3 ){
 
-            if(!(vowels.includes(nome[i])) && conta<3) {   
-                name_caracther += nome[i];
-                conta += 1;
-            }
-        }
+        name_caracther = `${name_caracther[0]}${name_caracther[2]}${name_caracther[3]}`
 
-        if(conta<3){
+    } else if(conta == 2){
+        alert("ingresso");
+        name_caracther = `${name_caracther[0]}${name_caracther[1]}${name_caracther[2]}`
 
-            for (let i = 0; i<nome.length; i++){
+    }else{
 
-                if ((vowels.includes(nome[i])) && conta<3){
+            for (let i = 0; i<nome.length && conta<2; i++){
+
+                if ((vowels.includes(nome[i]))){
                     name_caracther += nome[i];
                     conta += 1;
                 }
@@ -69,54 +67,54 @@ if( n==`nome` ){
             }
 
         }
-
-    } else {
-
-        conta = 0;
-        for (let i = 0; i<nome.length; i++){
-
-            if(!(vowels.includes(nome[i])) && conta<4) {   
-                if (conta!=1){
-                    name_caracther += nome[i];
-                    
-                } else {
-                }
-                conta += 1;
-            }
-        }
-    }
-} else {
-
-        for (let i = 0; i<nome.length; i++){
-
-            if(!(vowels.includes(nome[i])) && conta<3) {   
-                name_caracther += nome[i];
-                conta += 1;
-            }
-        }
-
-        if(conta<3){
-
-            for (let i = 0; i<nome.length; i++){
-
-                if ((vowels.includes(nome[i])) && conta<3){
-                    name_caracther += nome[i];
-                    conta += 1;
-                }
-            }
-
-            if(conta<3){
-                    name_caracther +=`x`
-            }
-
-        }
+            return name_caracther;
 }
 
+    
+
+
+
+function user_surname(){
+
+    const vowels = "aeiou";
+    let nome = document.getElementById(`cognome`).value;
+    let name_caracther = ``;
+    let conta = 0;
+
+    if (nome.length<2){
+        alert("C'è un errore nel tuo cognome");
+        return false;
+    } 
+
+    for (let i = 0; i<nome.length && conta<3; i++){
+
+        if(!(vowels.includes(nome[i])) ) {   
+            name_caracther += nome[i];
+            conta += 1;
+        }
+    }
+
+    if(conta<3){
+
+        for (let i = 0; i<nome.length && conta<3; i++){
+
+            if ((vowels.includes(nome[i]))){
+                name_caracther += nome[i];
+                conta += 1;
+            }
+        }
+
+        if(conta<3){
+                name_caracther +=`x`
+        }
+
+    }
     return name_caracther;
 }
 
 
 function data_nascita(){
+    const charmese = ["a","b","c","d","e","h","l","m","p","r","s","t"]
     let data = document.getElementById('data').value;
     let data_code=``;
     let mese;
@@ -131,63 +129,7 @@ function data_nascita(){
 
     data = data.split("-");
 
-    switch (parseInt(data[1])){
-        case 1:
-            mese = `a`;
-            break;
-
-        case 2:
-            mese = `b`;
-            break;
-
-        case 3:
-            mese = `c`;
-            break;
-
-        case 4:
-            mese = `d`;
-            break;
-
-
-        case 5:
-            mese = `e`;
-            break;
-
-
-        case 6:
-            mese = `h`;
-            break;
-
-
-        case 7:
-            mese = `l`;
-             break;
-
-
-        case 8:
-            mese = `m`;
-            break;
-
-
-        case 9:
-            mese = `p`;                   
-            break;
-
-
-        case 10:
-            mese = `r`;
-            break;
-
-
-        case 11:
-            mese = `s`;
-            break;
-
-
-        case 12:
-            mese = `t`;
-            break;
-    }
+    mese = charmese[parseInt(data[1])-1];
 
     if (sesso == `f`){
         giorno = parseInt(data[2])+40;
