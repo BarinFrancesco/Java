@@ -25,7 +25,7 @@ p{
 }
 
 #tessera_sanitaria{
-    width: 30vw;
+    width: 550px;
     height: min-content;
     border: 1px solid rgb(25,25,25);
     border-radius: 25px;
@@ -40,16 +40,17 @@ p{
 }
 
 #calcola{
+    margin-left: 125px;
     border: none;
     border-radius: 5px;
+    height: 25px;
     background-color: rgb(3,145,66);
     color: rgb(255,255,255);
     text-decoration: none;
+
     transition: 3.5s;
-    height: 25px;
 }
 
 #calcola:hover{
     text-decoration: underline;
 }
-
