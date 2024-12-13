@@ -213,6 +213,7 @@ function leggi_lista(input){
 
 
 function riempi_select(testo){
+
     let lista = testo.split("\r\n");
     let elenco = document.getElementById("comune");
     let element_select;
