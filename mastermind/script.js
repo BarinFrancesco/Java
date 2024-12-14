@@ -1,5 +1,17 @@
-
 let row = 1;
+let color1=``;
+let color2=``;
+let color3=``;
+let color4=``;
+
+
+
+window.onload = function(){
+        for ( let i = 1; 1<5; i++ ){
+            let x = Math.floor(Math.random()*7);
+            alert(x);
+        }
+}
 
 function change_color(x,y){
     let btn = document.getElementById(`${row}-${y}`);
