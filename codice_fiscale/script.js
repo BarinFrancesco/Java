@@ -80,6 +80,8 @@ function user_surname(){
     let name_caracther = ``;
     let conta = 0;
 
+    nome = nome.toLowerCase();
+
     if (nome.length<2){
         alert("C'è un errore nel tuo cognome");
         return false;
