@@ -143,7 +143,7 @@ function verifica(){
 
     if(btn_color_1.classList == color1 && btn_color_2.classList == color2 && btn_color_3.classList == color3 && btn_color_4.classList == color4){
         document.getElementById("container_win").style.display = "block";
-        document.getElementById("win_text").innerHTML = "COMPLIMENTI, HAI VINTO";
+        document.getElementById("win_text").innerHTML = "COMPLIMENTI, HAI VINTO!!";
     } else if(row == 8){
         document.getElementById("container_win").style.display = "block";
         document.getElementById("win_text").innerHTML = "PECCATO, HAI PERSO";
