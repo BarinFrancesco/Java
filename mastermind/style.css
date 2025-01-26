@@ -17,8 +17,21 @@ button{
     transition: 0.2s;
 }
 
+h1{
+    color: rgb(218, 165, 32);
+}
+
+p{
+    margin-left: 5px;
+}
+
 button:hover{
     transform: scale(1.2);
+}
+
+img{
+    height: 33px;
+    width: 120px;
 }
 
 .red{
@@ -50,17 +63,27 @@ button:hover{
 }
 
 .ccco{
-    background-color: rgb(10, 120, 20);
+    border: 4px solid rgb(10, 120, 20);
 }
 
 .ccwo{
-    background-color: rgb(190, 100, 10);
+    border: 4px solid rgb(190, 100, 10);
 }
 
 .wcwo{
-    background-color: rgb(150, 30, 30);
+    border: 4px solid rgb(150, 30, 30);
 }
 
+
+.instruction_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space evenly;
+    width: 430px;
+    align-items: center;
+    background-color: rgb(50, 50, 50);
+    border: none;
+}
 
 .row{
     display: flex;
@@ -73,6 +96,20 @@ button:hover{
     width: 400px;
 }
 
+#instructions{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /*color: rgb(218, 165, 32);*/
+    height: 600px;
+    width: 450px;
+    padding: 10px;
+    background-color: rgb(50, 50, 50);
+    box-shadow: 0 10px 200px rgb(0, 0, 0);
+    z-index: 1;
+}
 
 #mastermind{
     height: 75px;

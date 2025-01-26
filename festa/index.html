@@ -10,8 +10,48 @@
 <body>
 
     <h1>Festa</h1>
-    <button onclick="calcola()">CALCOLA</button>
-    <div id="risposta"></div>
+    <table id="receipt">
+        <tr id="prima_riga">
+        <th>Articolo</th>
+        <th>Prezzo</th>
+        <th>Sconto</th>
+        <th>Quantità</th>
+        </tr>
+    </table>
     
+    <div id="contenitore_risposta">
+
+        <div class="form">
+            <h2>Aggiunta di elementi</h2>
+            <div class="form_item">
+            <label for="articolo">Articolo:</label>
+            <input type="text" id="articolo"> 
+            </div>
+
+            <div class="form_item">
+            <label for="prezzo">Costo:</label>
+            <input type="number" id="prezzo" min="1"> 
+            </div>
+
+            <div class="form_item">
+            <label for="sconto">Sconto:</label>
+            <input type="number" id="sconto" min="1"> 
+            </div>
+
+            <div class="form_item">
+                <label for="quantità">Quantità:</label>
+                <input type="number" id="quantità" min="1"> 
+                </div>
+
+            <div>
+            <button onclick="aggiungi()" id="button">AGGIUNGI</button> <button onclick="calcola()" id="button">CALCOLA</button>
+            </div>
+        </div>
+
+        <div>
+        <p id="risposta"></p>
+        </div>
+    </div>
+
 </body>
 </html>

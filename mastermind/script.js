@@ -48,9 +48,9 @@ function reboot(){
     }
 }
 
-
-
-
+function disappear(){
+    document.getElementById("instructions").style.display=`none`;
+}
 
 function change_color(y){
     let btn = document.getElementById(`${row}-${y}`);

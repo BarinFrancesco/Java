@@ -10,7 +10,15 @@
 <body>
         
     <div id="container_win">  <div id="win"><h1 id="win_text"></h1> <button id="reboot" onclick="reboot()">GIOCA ANCORA</button></div></div>
-
+    <div id="instructions"> 
+        <h1>Come giocare</h1>  
+        <div class="instruction_row"><button></button><p>Premi i pulsanti per cambiare colore</p></div> 
+        <div class="instruction_row"><img src="img/instructions image.jpg"><p> Premi il pulsante in alto per inviare il tentativo</p> </div> 
+        <div class="instruction_row"><button class="ccco"></button><p>Se appare un cerchio verde il colore è nel posto corretto</p></div>
+        <div class="instruction_row"><button class="ccwo"></button><p>Se appare il colore arancio il colore c'è ma è nel posto sbagliato</p></div>
+        <div class="instruction_row"><button class="wcwo"></button><p>Se appare il colore rosso il colore non c'è</p></div>
+        <button id="reboot" onclick="disappear()">inizia a giocare</button>
+    </div>
 
     <div class="row">
         <button id="mastermind" onclick="verifica()">MASTERMIND</button>
