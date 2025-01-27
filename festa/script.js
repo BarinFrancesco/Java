@@ -85,7 +85,6 @@ function aggiungi(){
 }
 
 function calcola() {
-    console.log(row_count);
     document.getElementById("risposta").innerHTML ="";
     let tot = 0;
     let tot_sconto = 0 ;
@@ -108,8 +107,6 @@ function calcola() {
 
 function elimina(x) {
     lista.splice(x,1);
-
-    console.log(row_count);
     
     lista.forEach( (x,i) =>{
     
@@ -137,18 +134,24 @@ modifica_riga=i;
 function modifica(){
     let item = lista[modifica_riga];
     document.getElementById("div_modifica").style.display="none";
-    item.prezzo = parseFloat(document.getElementById("modifica_prezzo").value)
-    item.sconto = parseFloat(document.getElementById("modifica_sconto").value)
-    item.prezzo = parseFloat(document.getElementById("modifica_categoria").value)
-
+    item.prezzo = parseFloat(document.getElementById("modifica_prezzo").value);
+    item.sconto = parseFloat(document.getElementById("modifica_sconto").value);
+    item.categoria = document.getElementById("modifica_categoria").value;
 
     let row = document.getElementById(`row_${modifica_riga}`);
         row.innerHTML= `
-            <td>${item.nome}</td>
-            <td>${item.prezzo}€</td>
-            <td>${item.sconto}%</td>
-            <td><input type="number" value="${item.quantità}" min="1" class="table_input" id="input_${modifica_riga}"></td>
-            <td>${item.categoria}</td>
-            <td><button onclick="elimina(${modifica_riga})" class="button" id="elimina">Elimina</button></td>
-            <td><button onclick="mostra_modifica(${modifica_riga})" class="button" id="modifica">Modifica</button></td>`
+        <td>${item.nome}</td>
+        <td>${item.prezzo}€</td>
+        <td>${item.sconto}%</td>
+        <td><input type="number" value="${item.quantità}" min="1" class="table_input" id="input_${modifica_riga}"></td>
+        <td>${item.categoria}</td>
+        <td><button onclick="elimina(${modifica_riga})" class="button" id="elimina">Elimina</button></td>
+        <td><button onclick="mostra_modifica(${modifica_riga})" class="button" id="modifica">Modifica</button></td>`;
+
+
+document.getElementById("modifica_prezzo").value="";
+document.getElementById("modifica_sconto").value="";
+document.getElementById("modifica_categoria").value="";
+            
+calcola()
 }

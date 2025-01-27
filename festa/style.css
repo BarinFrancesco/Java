@@ -1,9 +1,24 @@
 body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: verdana;
     font-size: 13px;
 }
 
-p,h2{
+h1{
+    font-size: 50px;
+    color: rgb(51, 112, 245);
+    margin: 10px;
+}
+
+h2{
+    margin: 0px;
+    color: rgb(51, 112, 245);
+}
+
+p{
     margin: 0px;
 }
 
@@ -11,11 +26,11 @@ table{
     border-collapse: collapse;
 }
 
-td{
+td,th{
     width: 130px;
     height: 40px;
     text-align: center;
-    border: 1px solid rgb(128,128,128);
+    border: 1px solid rgb(128,128,128,0);
 }
 
 input{
@@ -129,4 +144,16 @@ input{
     border: 1px solid rgb(0,0,0);
     padding: 10px;
 
+}
+
+#div_risposta{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 245px;
+}
+
+#risposta{
+    margin: 10px;
 }
