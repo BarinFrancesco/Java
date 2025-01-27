@@ -8,6 +8,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <div id="div_modifica">
+    <h1>Modifica oggetto</h1>
+    <div class="form_item">
+    <label for="modifica_prezzo">Costo:</label>
+    <input type="number" id="modifica_prezzo" min="1"> 
+    
+    </div>
+
+    <div class="form_item">
+    <label for="modifica_sconto">Sconto:</label>
+    <input type="number" id="modifica_sconto" min="1"> 
+    </div>
+
+    <div class="form_item">
+        <label for="modifica_categoria">Categoria:</label>
+        <select id="modifica_categoria" name="categoria">
+            <option value="bevande alcoliche">Bevande alcoliche</option>
+            <option value="bevande analcoliche">Bevande analcoliche</option>
+            <option value="stuzzichini">stuzzichini</option>
+            <option value="cibo">Cibo</option>
+        </select>
+        </div>
+        <button class="button" id="modifica" onclick="modifica()">Modifica</button>
+    </div>
+
 
     <h1>Festa</h1>
     <table id="receipt">
@@ -16,10 +41,13 @@
         <th>Prezzo</th>
         <th>Sconto</th>
         <th>Quantità</th>
+        <th>Categoria</th>
+        <th>Elimina</th>
+        <th>Modifica</th>
         </tr>
     </table>
     
-    <div id="contenitore_risposta">
+    <div id="contenitore_risposta">            
 
         <div class="form">
             <h2>Aggiunta di elementi</h2>
@@ -39,12 +67,22 @@
             </div>
 
             <div class="form_item">
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" name="categoria">
+                    <option value="bevande alcoliche">Bevande alcoliche</option>
+                    <option value="bevande analcoliche">Bevande analcoliche</option>
+                    <option value="stuzzichini">Sogno</option>
+                    <option value="cibo">Cibo</option>
+                </select>
+                </div>
+
+            <div class="form_item">
                 <label for="quantità">Quantità:</label>
                 <input type="number" id="quantità" min="1"> 
                 </div>
 
             <div>
-            <button onclick="aggiungi()" id="button">AGGIUNGI</button> <button onclick="calcola()" id="button">CALCOLA</button>
+            <button onclick="aggiungi()" class="button">AGGIUNGI</button> <button onclick="calcola()" class="button">CALCOLA</button>
             </div>
         </div>
 

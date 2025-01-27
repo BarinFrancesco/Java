@@ -58,31 +58,75 @@ input{
     background-color: rgb(235, 235, 235);
 }
 
-#button{
+.button{
     height: 25px;
     width: 80px;
     color: rgb(255, 255, 255);
-    background-color: #3370F5;
-    border: 2px solid #3370F5;
+    background-color: rgb(51, 112, 245);
+    border: 2px solid rgb(51, 112, 245);
     border-radius: 3px;
     transition: 0.5s;
 }
 
-#button:hover{
+.button:hover{
     height: 25px;
     width: 80px;
-    color: #3370F5;
+    color: rgb(51, 112, 245);
     background-color: rgb(255, 255, 255);
-    border: 2px solid #3370F5;
+    border: 2px solid rgb(51, 112, 245);
     border-radius: 3px;
 }
 
-#button:active{
+.button:active{
     height: 25px;
     width: 80px;
     color: rgb(255, 255, 255);
-    background-color: #3370F5;
-    border: 2px solid #3370F5;
+    background-color: rgb(51, 112, 245);
+    border: 2px solid rgb(51, 112, 245);
     border-radius: 3px;
     transition: 0.5s;
+}
+
+#elimina{
+    background-color: rgb(245, 51, 51);
+    border: 2px solid rgb(245, 51, 51);
+}
+
+#elimina:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(245, 51, 51);
+}
+
+#elimina:active{
+    background-color: rgb(245, 51, 51);
+    border: 2px solid rgb(245, 51, 51);
+}
+
+#modifica{
+    background-color: rgb(35, 165, 35);
+    border: 2px solid rgb(35, 165, 35);
+}
+
+#modifica:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(35, 165, 35);
+}
+
+#modifica:active{
+    background-color: rgb(35, 165, 35);
+    border: 2px solid rgb(35, 165, 35);
+}
+
+#div_modifica{
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    border-radius: 5px;
+    border: 1px solid rgb(0,0,0);
+    padding: 10px;
+
 }
