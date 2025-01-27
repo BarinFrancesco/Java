@@ -9,6 +9,7 @@ let lista = [
 let row_count = 0;
 let modifica_riga = 0;
 
+//funzione inisiale per caricare la tabella
 window.onload = function(){
         lista.forEach( (x,i) => {
             let row = document.createElement("tr");
@@ -25,9 +26,9 @@ window.onload = function(){
             document.getElementById("receipt").appendChild(row);
         })
         calcola()
-    }
+}
 
-
+//funzione per aggiungere un elemento, molto lunga perchè ho inserito pure lo stile
 function aggiungi(){
 
     let articolo_oggetto = document.getElementById("articolo");
@@ -84,6 +85,7 @@ function aggiungi(){
         calcola();
 }
 
+//dunzione per calcolare il totale, richiamata spesso
 function calcola() {
     document.getElementById("risposta").innerHTML ="";
     let tot = 0;
@@ -105,6 +107,7 @@ function calcola() {
     `;
 }
 
+//funzione per eliminare un pezzo
 function elimina(x) {
     lista.splice(x,1);
     
@@ -126,11 +129,13 @@ function elimina(x) {
     calcola();
 }
 
+//funzione per far apparire la scheda di modifica
 function mostra_modifica(i){
 document.getElementById("div_modifica").style.display="flex";
 modifica_riga=i;
 }
 
+//funzione per modificare il prezzo
 function modifica(){
     let item = lista[modifica_riga];
     document.getElementById("div_modifica").style.display="none";
